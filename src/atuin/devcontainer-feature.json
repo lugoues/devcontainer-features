@@ -1,0 +1,19 @@
+{
+    "name": "Atuin",
+    "id": "atuin",
+    "version": "0.0.1",
+    "description": "Magical shell history",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "Select the version of Atuin to install.",
+            "proposals": [
+                "latest"
+            ],
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers-contrib/features/gh-release"
+    ]
+}
