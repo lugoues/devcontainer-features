@@ -16,7 +16,7 @@ $nanolayer_location \
     install \
     devcontainer-feature \
     "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18" \
-    --option repo='mineiros-io/terramate' --option binaryNames='terramate' --option binaryNames='terramate-ls' --option version="$VERSION"
+    --option repo='mineiros-io/terramate' --option binaryNames='terramate,terramate-ls' --option libName='terramate' --option version="$VERSION"
 
 
 
