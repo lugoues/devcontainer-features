@@ -3,11 +3,11 @@
 
 Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands.
 
-## Example DevContainer Usage
+## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/devcontainers-contrib/features/atuinn:1": {}
+    "ghcr.io/Lugoues/devcontainer-features/atuin:1": {}
 }
 ```
 
@@ -16,3 +16,10 @@ Atuin replaces your existing shell history with a SQLite database, and records a
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select the version to install. | string | latest |
+| initOptions | Select the version to install. | string | latest |
+
+
+
+---
+
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/atuin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
