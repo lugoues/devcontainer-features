@@ -11,12 +11,12 @@ source ./library_scripts.sh
 # of the script
 ensure_nanolayer nanolayer_location "v0.4.45"
 
-
+ #shellcheck disable=SC2154
 $nanolayer_location \
     install \
     devcontainer-feature \
     "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18" \
-    --option repo='Lugoues/atuin' --option binaryNames='atuin' --option version="$VERSION"
+    --option repo='atuinsh/atuin' --option binaryNames='atuin' --option version="$VERSION"
 
 
 
