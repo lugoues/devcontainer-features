@@ -18,9 +18,6 @@ $nanolayer_location \
     "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18" \
     --option repo='atuinsh/atuin' --option libName='atuin' --option binaryNames='atuin' --option version="$VERSION"
 
-# Fix shared config mount rights
-chown -R "${_CONTAINER_USER}" "${ATUIN_CONFIG_DIR}"
-
 if [[ "$(cat /etc/bash.bashrc)" != *"$1"* ]]; then
     echo "Updating /etc/bash.bashrc"
      #shellcheck disable=SC2016

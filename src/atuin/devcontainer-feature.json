@@ -26,6 +26,7 @@
     "installsAfter": [
         "ghcr.io/devcontainers-contrib/features/gh-release"
     ],
+    "postCreateCommand": "sudo chown -R \"${USER}\" \"${ATUIN_CONFIG_DIR}\"",
     "mounts": [
         {
             "source": "vsc-devcontainers-atuin",
