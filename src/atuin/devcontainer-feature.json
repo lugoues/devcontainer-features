@@ -5,26 +5,21 @@
     "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/atuin",
     "description": "Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands.",
     "containerEnv": {
-        "ATUIN_HOST_NAME": "${devcontainerId}",
-        "ATUIN_HOST_USER": "vscode",
         "AUTH_KEY_PATH": "/mnt/atuin/key",
         "ATUIN_CONFIG_DIR": "/mnt/atuin"
     },
     "options": {
         "version": {
             "default": "latest",
-            "description": "Select the version to install.",
-            "proposals": [
-                "latest"
-            ],
+            "description": "Select the version to install. (defaults to devcontainer name)",
             "type": "string"
         },
-        "initOptions": {
-            "default": "latest",
-            "description": "Select the version to install.",
-            "proposals": [
-                "latest"
-            ],
+        "atuin_host_name": {
+            "default": "",
+            "type": "string"
+        },
+        "atuin_host_user": {
+            "default": "vscode",
             "type": "string"
         }
     },

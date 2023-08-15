@@ -16,9 +16,29 @@ $nanolayer_location \
     install \
     devcontainer-feature \
     "ghcr.io/devcontainers-contrib/features/gh-release:1.0.18" \
-    --option repo='atuinsh/atuin' --option binaryNames='atuin' --option version="$VERSION"
+    --option repo='atuinsh/atuin' --option libName='atuin' --option binaryNames='atuin' --option version="$VERSION"
 
+# Fix shared config mount rights
+chown -R "${_CONTAINER_USER}" "${ATUIN_CONFIG_DIR}"
 
+if [[ "$(cat /etc/bash.bashrc)" != *"$1"* ]]; then
+    echo "Updating /etc/bash.bashrc"
+     #shellcheck disable=SC2016
+    echo 'eval "$(atuin init bash)"' >>/etc/bash.bashrc
+    [ -z "${ATUIN_HOST_NAME+x}" ] && (echo "[ -z \"\${ATUIN_HOST_NAME+x}\" ] && export ATUIN_HOST_NAME=${ATUIN_HOST_NAME}" >>/etc/bash.bashrc)
+    [ -z "${ATUIN_USER_NAME+x}" ] && (echo "[ -z \"\${ATUIN_USER_NAME+x}\" ] && export ATUIN_USER_NAME=${ATUIN_USER_NAME}" >>/etc/bash.bashrc)
+
+    mkdir -p /usr/local/share/bash-preexec
+    curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o /usr/local/share/bash-preexec/.bash-tc.sh
+    printf '\n[[ -f /usr/local/share/bash-preexec/.bash-tc.sh ]] && source /usr/local/share/bash-preexec/.bash-tc.sh\n' >> ~/.bashrc
+fi
+
+if [ -f "/etc/zsh/zshrc" ] && [[ "$(cat /etc/zsh/zshrc)" != *"$1"* ]]; then
+    echo "Updating /etc/zsh/zshrc"
+    #shellcheck disable=SC2016
+    echo 'eval "$(atuin init zsh)"' >>/etc/zsh/zshrc
+    [ -z "${ATUIN_HOST_NAME+x}" ] && (echo "[ -z \"\${ATUIN_HOST_NAME+x}\" ] && export ATUIN_HOST_NAME=${ATUIN_HOST_NAME}" >>/etc/zsh/zshrc)
+    [ -z "${ATUIN_USER_NAME+x}" ] && (echo "[ -z \"\${ATUIN_USER_NAME+x}\" ] && export ATUIN_USER_NAME=${ATUIN_USER_NAME}" >>/etc/zsh/zshrc)
+fi
 
 echo 'Done!'
-
