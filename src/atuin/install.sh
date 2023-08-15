@@ -22,8 +22,6 @@ if [[ "$(cat /etc/bash.bashrc)" != *"$1"* ]]; then
     echo "Updating /etc/bash.bashrc"
      #shellcheck disable=SC2016
     echo 'eval "$(atuin init bash)"' >>/etc/bash.bashrc
-    [ -z "${ATUIN_HOST_NAME+x}" ] && (echo "[ -z \"\${ATUIN_HOST_NAME+x}\" ] && export ATUIN_HOST_NAME=${ATUIN_HOST_NAME}" >>/etc/bash.bashrc)
-    [ -z "${ATUIN_USER_NAME+x}" ] && (echo "[ -z \"\${ATUIN_USER_NAME+x}\" ] && export ATUIN_USER_NAME=${ATUIN_USER_NAME}" >>/etc/bash.bashrc)
 
     mkdir -p /usr/local/share/bash-preexec
     curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o /usr/local/share/bash-preexec/.bash-tc.sh
@@ -34,8 +32,6 @@ if [ -f "/etc/zsh/zshrc" ] && [[ "$(cat /etc/zsh/zshrc)" != *"$1"* ]]; then
     echo "Updating /etc/zsh/zshrc"
     #shellcheck disable=SC2016
     echo 'eval "$(atuin init zsh)"' >>/etc/zsh/zshrc
-    [ -z "${ATUIN_HOST_NAME+x}" ] && (echo "[ -z \"\${ATUIN_HOST_NAME+x}\" ] && export ATUIN_HOST_NAME=${ATUIN_HOST_NAME}" >>/etc/zsh/zshrc)
-    [ -z "${ATUIN_USER_NAME+x}" ] && (echo "[ -z \"\${ATUIN_USER_NAME+x}\" ] && export ATUIN_USER_NAME=${ATUIN_USER_NAME}" >>/etc/zsh/zshrc)
 fi
 
 echo 'Done!'
