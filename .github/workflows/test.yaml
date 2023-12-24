@@ -13,6 +13,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - atuin
           - terramate
         baseImage:
           - mcr.microsoft.com/devcontainers/base:bookworm
