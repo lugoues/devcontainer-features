@@ -1,0 +1,29 @@
+{
+  "id": "krew",
+  "version": "1.0.1",
+  "name": "Krew (via Github Releases)",
+  "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/krew",
+  "description": "Find and install kubectl plugins .",
+  "options": {
+    "version": {
+      "default": "latest",
+      "description": "Select the version to install.",
+      "proposals": [
+        "latest"
+      ],
+      "type": "string"
+    },
+    "plugins": {
+      "default": "",
+      "description": "Space deliminated list of plugins to install",
+      "type": "string"
+    }
+  },
+  "containerEnv": {
+    "KREW_ROOT": "~/.local/share/krew",
+    "PATH": "${KREW_ROOT}/bin:${PATH}"
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
