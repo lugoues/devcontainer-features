@@ -1,5 +1,5 @@
 
-# Kustomize (kustomize)
+# Kustomize  (via Github Releases) (kustomize)
 
 Kustomize introduces a template-free way to customize application configuration that simplifies the use of off-the-shelf applications.
 
