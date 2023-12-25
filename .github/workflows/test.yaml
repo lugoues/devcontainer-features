@@ -15,6 +15,7 @@ jobs:
         features:
           - atuin
           - k3d
+          - k9s
           - krew
           - kustomize
           - stern
