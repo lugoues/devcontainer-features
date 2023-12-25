@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
-
 set -e
+set -x
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
 
 KREW_VERSION=${VERSION:-"latest"}
+USERNAME=${USERNAME:-$_REMOTE_USER}
+PLUGINS=${PLUGINS:-""}
+USER_LOCATION=""
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
     exit 1
+fi
+
+if [ "$USERNAME" = "root" ]; then
+  USER_LOCATION="/root"
+else
+  USER_LOCATION="/home/$USERNAME"
 fi
 
 apt_get_update()
@@ -65,13 +74,13 @@ find_version_from_git_tags() {
 }
 
 # Install dependencies
-check_packages curl git tar
+check_packages curl git tar ca-certificates sudo
 
 find_version_from_git_tags KREW_VERSION https://github.com/kubernetes-sigs/krew
 
-export TMP_DIR="/tmp/tmp-krew"
+export TMP_DIR="/tmp/krew"
 mkdir -p ${TMP_DIR}
-chmod 700 ${TMP_DIR}
+chmod 777 ${TMP_DIR}
 
 architecture="$(uname -m)"
 case $architecture in
@@ -80,44 +89,25 @@ case $architecture in
     *) echo "(!) Architecture $architecture unsupported"; exit 1 ;;
 esac
 
-echo  curl -sSL "https://github.com/kubernetes-sigs/krew/releases/download/v${KREW_VERSION}/krew-linux_${architecture}.tar.gz" -o "${TMP_DIR}/krew.tar.gz"
-curl -sSL "https://github.com/kubernetes-sigs/krew/releases/download/v${KREW_VERSION}/krew-linux_${architecture}.tar.gz" -o "${TMP_DIR}/krew.tar.gz"
 
-tar -xzf "${TMP_DIR}/krew.tar.gz" -C "${TMP_DIR}"
+sudo -iu "${USERNAME}" << EOF
+    set -eo pipefail
+    set -x
 
-mv ${TMP_DIR}/krew-linux_${architecture} /usr/local/bin/krew
+    export KREW_ROOT="${USER_LOCATION}/.local/share/krew"
 
-chmod 0755 /usr/local/bin/krew
+    curl -sSL "https://github.com/kubernetes-sigs/krew/releases/download/v${KREW_VERSION}/krew-linux_${architecture}.tar.gz" -o "${TMP_DIR}/krew.tar.gz"
 
+    tar -xzf "${TMP_DIR}/krew.tar.gz" -C "${TMP_DIR}"
 
-# Clean up
-rm -rf /var/lib/apt/lists/*
+    chmod 0777 "${TMP_DIR}/krew-linux_${architecture}"
+
+    "${TMP_DIR}/krew-linux_${architecture}" install krew
+
+    if [ -n "${PLUGINS}" ]; then
+        "${TMP_DIR}/krew-linux_${architecture}" install ${PLUGINS}
+    fi
+
+EOF
 
 echo "Done!"
-
-# #!/bin/bash -i
-
-# set -e
-
-# source ./library_scripts.sh
-
-# # nanolayer is a cli utility which keeps container layers as small as possible
-# # source code: https://github.com/devcontainers-contrib/nanolayer
-# # `ensure_nanolayer` is a bash function that will find any existing nanolayer installations,
-# # and if missing - will download a temporary copy that automatically get deleted at the end
-# # of the script
-# ensure_nanolayer nanolayer_location "v0.5.4"
-
-
-# # shellcheck disable=SC2154
-# $nanolayer_location \
-#     install \
-#     devcontainer-feature \
-#     "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23" \
-#         --option repo='kubernetes-sigs/krew' \
-#         --option binaryNames='krew-linux_amd64' \
-#         # --option binLocation='$_REMOTE_USER_HOME/.local/bin' \
-#         --option version="$VERSION"
-
-
-# echo 'Done!'

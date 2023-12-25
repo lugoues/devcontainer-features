@@ -1,0 +1,11 @@
+{
+  "install_plugin": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "krew": {
+        "version": "latest",
+        "plugins": "ctx grep"
+      }
+    }
+  }
+}

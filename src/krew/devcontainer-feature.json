@@ -12,6 +12,18 @@
         "latest"
       ],
       "type": "string"
+    },
+    "plugins": {
+      "default": "",
+      "description": "Space deliminated list of plugins to install",
+      "type": "string"
     }
-  }
+  },
+  "containerEnv": {
+    "KREW_ROOT": "~/.local/share/krew",
+    "PATH": "${KREW_ROOT}/bin:${PATH}"
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
 }
