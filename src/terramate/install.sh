@@ -12,6 +12,7 @@ source ./library_scripts.sh
 ensure_nanolayer nanolayer_location "v0.5.4"
 
 
+# shellcheck disable=SC2154
 $nanolayer_location \
     install \
     devcontainer-feature \
