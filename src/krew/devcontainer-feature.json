@@ -1,6 +1,6 @@
 {
   "id": "krew",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Krew (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/krew",
   "description": "Find and install kubectl plugins .",
