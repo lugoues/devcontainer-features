@@ -1,0 +1,20 @@
+{
+  "id": "delta",
+  "version": "1.0.0",
+  "name": "Delta (via Github Releases)",
+  "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/delta",
+  "description": " A syntax-highlighting pager for git, diff, and grep output ",
+  "options": {
+    "version": {
+      "default": "latest",
+      "description": "Select the version to install.",
+      "proposals": [
+        "latest"
+      ],
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers-contrib/features/gh-release"
+  ]
+}
