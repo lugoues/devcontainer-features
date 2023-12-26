@@ -15,8 +15,7 @@ jobs:
         features:
           - atuin
           - delta
-          - k3d
-          - k9s
+          - google-cloud-cli
           - krew
           - kustomize
           - stern
@@ -40,6 +39,7 @@ jobs:
     strategy:
       matrix:
         features:
+          - google-cloud-cli
           - krew
     steps:
       - uses: actions/checkout@v3

@@ -1,0 +1,28 @@
+{
+  "install_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "google-cloud-cli": {
+        "version": "458.0.0"
+      }
+    }
+  },
+  "install_component": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "google-cloud-cli": {
+        "version": "latest",
+        "gke-gcloud-auth-plugin": "true"
+      }
+    }
+  },
+  "install_component_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "google-cloud-cli": {
+        "version": "458.0.0",
+        "gke-gcloud-auth-plugin": "true"
+      }
+    }
+  }
+}
