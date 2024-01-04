@@ -19,6 +19,7 @@ jobs:
           - krew
           - kustomize
           - stern
+          - tailscale
           - terramate
           - tilt
         baseImage:
