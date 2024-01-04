@@ -19,6 +19,7 @@ jobs:
           - krew
           - kustomize
           - stern
+          - tailscale
           - terramate
           - tilt
         baseImage:
@@ -41,6 +42,7 @@ jobs:
         features:
           - google-cloud-cli
           - krew
+          - tailscale
     steps:
       - uses: actions/checkout@v3
 

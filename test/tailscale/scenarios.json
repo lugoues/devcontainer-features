@@ -1,0 +1,10 @@
+{
+  "install_version": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "tailscale": {
+        "version": "1.56.0"
+      }
+    }
+  }
+}
