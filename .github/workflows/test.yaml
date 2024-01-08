@@ -19,6 +19,7 @@ jobs:
           - just
           - krew
           - kustomize
+          - lnav
           - stern
           - tailscale
           - terramate

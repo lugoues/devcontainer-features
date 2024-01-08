@@ -1,0 +1,20 @@
+{
+    "name": "lnav  (via Github Releases)",
+    "id": "lnav",
+    "version": "1.0.0",
+    "description": " Log file navigator.",
+    "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/lnav",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest"
+            ],
+            "default": "latest",
+            "description": "Select version of just."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
