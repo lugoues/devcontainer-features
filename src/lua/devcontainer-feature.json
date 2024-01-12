@@ -1,0 +1,23 @@
+{
+  "id": "lua",
+  "version": "1.0.0",
+  "name": "lua (via apt~get)",
+  "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/lua",
+  "description": "Lua is a powerful, efficient, lightweight, embeddable scripting language.",
+  "options": {
+    "version": {
+      "default": "5.4",
+      "description": "Select the version to install.",
+      "proposals": [
+        "5.4",
+        "5.3",
+        "5.2",
+        "5.1"
+      ],
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers-contrib/features/apt-get-packages"
+  ]
+}
