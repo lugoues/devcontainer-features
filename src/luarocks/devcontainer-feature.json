@@ -1,0 +1,17 @@
+{
+  "id": "luarocks",
+  "version": "1.0.0",
+  "name": "luarocks (via apt~get)",
+  "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/luarocks",
+  "description": "LuaRocks is a package manager for the Lua programming language that provides a standard format for distributing Lua modules, a tool designed to easily manage the installation of rocks, and a server for distributing them.",
+  "options": {
+    "packages": {
+      "default": "",
+      "description": "Comma deliminated list of packages to install.",
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers-contrib/features/apt-get-packages"
+  ]
+}
