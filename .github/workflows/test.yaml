@@ -16,6 +16,7 @@ jobs:
           - atuin
           - delta
           - google-cloud-cli
+          - fly
           - just
           - krew
           - kustomize
