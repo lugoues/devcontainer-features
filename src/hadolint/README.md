@@ -1,13 +1,13 @@
 
-# Tilt (via Github Releases) (tilt)
+# hadolint (via Github Releases) (hadolint)
 
-T Define your dev environment as code. For microservice apps on Kubernetes.
+Dockerfile linter, validate inline bash, written in Haskell.
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/tilt:1": {}
+    "ghcr.io/Lugoues/devcontainer-features/hadolint:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ T Define your dev environment as code. For microservice apps on Kubernetes.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/tilt/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/hadolint/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
