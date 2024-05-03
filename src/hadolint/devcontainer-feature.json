@@ -1,0 +1,20 @@
+{
+  "id": "hadolint",
+  "version": "1.0.0",
+  "name": "hadolint (via Github Releases)",
+  "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tilt",
+  "description": "Dockerfile linter, validate inline bash, written in Haskell.",
+  "options": {
+    "version": {
+      "default": "latest",
+      "description": "Select the version to install.",
+      "proposals": [
+        "latest"
+      ],
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers-contrib/features/gh-release"
+  ]
+}

@@ -15,8 +15,9 @@ jobs:
         features:
           - atuin
           - delta
-          - google-cloud-cli
           - fly
+          - google-cloud-cli
+          - hadolint
           - just
           - krew
           - kustomize
