@@ -24,6 +24,7 @@ jobs:
           - lnav
           - lua
           - luarocks
+          - neovim
           - stern
           - tailscale
           - terramate
