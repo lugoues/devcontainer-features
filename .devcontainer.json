@@ -1,35 +1,26 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
-      "customizations": {
-        "vscode": {
-            "settings": {
-                "json.schemas": [
-                    {
-                        "fileMatch": [
-                            "*/devcontainer-feature.json"
-                        ],
-                        "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-                    }
-                ]
-            },
-            "extensions": [
-                "mads-hartmann.bash-ide-vscode",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "DavidAnson.vscode-markdownlint"
-            ]
-        }
-    },
-    "features": {
-        "ghcr.io/devcontainers-contrib/features/go-task:1": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-        "ghcr.io/devcontainers/features/node:1.3.1": {},
-        "ghcr.io/devcontainers/features/node:1": {},
-        "ghcr.io/devcontainers/features/python:1": {},
-        "ghcr.io/lugoues/devcontainer-features/atuin:1.0.3": {},
-        "ghcr.io/lugoues/devcontainer-features/just:1.0.0": {},
-        "ghcr.io/lukewiwa/features/shellcheck:0.2.3": {},
-        "ghcr.io/lukewiwa/features/shellcheck:0": {}
-    },
-    "updateContentCommand": "npm install -g @devcontainers/cli"
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "json.schemas": [
+          {
+            "fileMatch": [
+              "*/devcontainer-feature.json"
+            ],
+            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
+          }
+        ]
+      },
+      "extensions": [
+        "mads-hartmann.bash-ide-vscode"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/lugoues/devcontainer-features/just:1.0.0": {}
+  },
+  "remoteUser": "node",
+  "updateContentCommand": "npm install -g @devcontainers/cli"
 }
