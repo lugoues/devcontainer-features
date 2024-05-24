@@ -7,7 +7,7 @@ Find and install kubectl plugins .
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/google-cloud-cli:1": {}
+    "ghcr.io/lugoues/devcontainer-features/google-cloud-cli:1": {}
 }
 ```
 
@@ -45,4 +45,4 @@ Find and install kubectl plugins .
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/google-cloud-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/google-cloud-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ Connect to your tailnet in your development container
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/tailscale:1": {}
+    "ghcr.io/lugoues/devcontainer-features/tailscale:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Connect to your tailnet in your development container
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/tailscale/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/tailscale/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

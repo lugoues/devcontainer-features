@@ -7,7 +7,7 @@ LuaRocks is a package manager for the Lua programming language that provides a s
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/luarocks:1": {}
+    "ghcr.io/lugoues/devcontainer-features/luarocks:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ LuaRocks is a package manager for the Lua programming language that provides a s
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/luarocks/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/luarocks/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

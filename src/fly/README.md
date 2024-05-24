@@ -7,7 +7,7 @@ Command line tools for fly.io services.
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/fly:1": {}
+    "ghcr.io/lugoues/devcontainer-features/fly:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Command line tools for fly.io services.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/fly/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/fly/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ Multi pod and container log tailing for Kubernetes.
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/stern:1": {}
+    "ghcr.io/lugoues/devcontainer-features/stern:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Multi pod and container log tailing for Kubernetes.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/stern/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/stern/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
