@@ -1,6 +1,6 @@
 {
   "id": "lefthook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "lefthook (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/lefthook",
   "description": "Fast and powerful Git hooks manager for any type of project.",

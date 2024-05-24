@@ -1,6 +1,6 @@
 {
   "id": "neovim",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "neovim (via Github Releases)",
   "documentationURL": "",
   "description": "Vim-fork focused on extensibility and usability",

@@ -1,9 +1,9 @@
 {
   "id": "k9s",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "k9s (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/k9s",
-  "description":  "🐶 Kubernetes CLI To Manage Your Clusters In Style!",
+  "description": "🐶 Kubernetes CLI To Manage Your Clusters In Style!",
   "options": {
     "version": {
       "default": "latest",

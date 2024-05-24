@@ -1,6 +1,6 @@
 {
   "id": "fly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "fly (via Github Releases)",
   "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/flyctl",
   "description": "Command line tools for fly.io services.",
