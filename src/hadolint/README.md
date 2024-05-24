@@ -7,7 +7,7 @@ Dockerfile linter, validate inline bash, written in Haskell.
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/hadolint:1": {}
+    "ghcr.io/lugoues/devcontainer-features/hadolint:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Dockerfile linter, validate inline bash, written in Haskell.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/hadolint/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/hadolint/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ Terramate adds powerful capabilities such as code generation, stacks, orchestrat
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/terramate:1": {}
+    "ghcr.io/lugoues/devcontainer-features/terramate:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Terramate adds powerful capabilities such as code generation, stacks, orchestrat
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/terramate/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/terramate/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/delta:1": {}
+    "ghcr.io/lugoues/devcontainer-features/delta:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/delta/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/delta/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ T Define your dev environment as code. For microservice apps on Kubernetes.
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/tilt:1": {}
+    "ghcr.io/lugoues/devcontainer-features/tilt:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ T Define your dev environment as code. For microservice apps on Kubernetes.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/tilt/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/tilt/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

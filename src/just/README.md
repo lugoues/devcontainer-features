@@ -7,7 +7,7 @@ Installs just, just is a handy way to save and run project-specific commands on 
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/just:1": {}
+    "ghcr.io/lugoues/devcontainer-features/just:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Installs just, just is a handy way to save and run project-specific commands on 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/just/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/just/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -7,7 +7,7 @@ Atuin replaces your existing shell history with a SQLite database, and records a
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/atuin:1": {}
+    "ghcr.io/lugoues/devcontainer-features/atuin:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Atuin replaces your existing shell history with a SQLite database, and records a
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/atuin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/atuin/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

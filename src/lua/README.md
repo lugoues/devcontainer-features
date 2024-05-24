@@ -7,7 +7,7 @@ Lua is a powerful, efficient, lightweight, embeddable scripting language.
 
 ```json
 "features": {
-    "ghcr.io/Lugoues/devcontainer-features/lua:1": {}
+    "ghcr.io/lugoues/devcontainer-features/lua:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Lua is a powerful, efficient, lightweight, embeddable scripting language.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/Lugoues/devcontainer-features/blob/main/src/lua/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/lua/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
