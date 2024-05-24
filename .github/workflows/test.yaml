@@ -25,6 +25,7 @@ jobs:
           - lnav
           - lua
           - luarocks
+          - mise
           - neovim
           - stern
           - tailscale
