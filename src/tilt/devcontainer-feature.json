@@ -1,6 +1,6 @@
 {
   "id": "tilt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Tilt (via Github Releases)",
   "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/tilt",
   "description": "T Define your dev environment as code. For microservice apps on Kubernetes.",

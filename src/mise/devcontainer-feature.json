@@ -1,6 +1,6 @@
 {
   "id": "mise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "mise (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/mise",
   "description": "dev tools, env vars, task runner",

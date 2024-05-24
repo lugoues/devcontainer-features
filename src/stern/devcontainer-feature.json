@@ -1,6 +1,6 @@
 {
   "id": "stern",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Stern (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/stern",
   "description": "Multi pod and container log tailing for Kubernetes.",

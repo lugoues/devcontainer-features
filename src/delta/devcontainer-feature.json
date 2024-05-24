@@ -1,6 +1,6 @@
 {
   "id": "delta",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Delta (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/delta",
   "description": " A syntax-highlighting pager for git, diff, and grep output ",

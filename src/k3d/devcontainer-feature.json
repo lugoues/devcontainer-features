@@ -1,9 +1,9 @@
 {
   "id": "k3d",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "k3d (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/k3d",
-  "description":  " Little helper to run CNCF's k3s in Docker",
+  "description": " Little helper to run CNCF's k3s in Docker",
   "options": {
     "version": {
       "default": "latest",
