@@ -1,4 +1,4 @@
-#!/bin/bash -i
+#!/bin/bash -ix
 
 set -e
 
@@ -21,5 +21,20 @@ $nanolayer_location \
         --option binaryNames='mise' \
         --option assetRegex='.*(.tar.gz)$' \
         --option version="$VERSION"
+
+
+function updaterc {
+	if [[ "$(cat /etc/bash.bashrc)" != *'eval "$(/usr/local/bin/mise activate bash)"'* ]]; then
+		echo "Updating /etc/bash.bashrc"
+		echo 'eval "$(/usr/local/bin/mise activate bash)"' >>/etc/bash.bashrc
+	fi
+
+	if [ -f "/etc/zsh/zshrc" ] && [[ "$(cat /etc/zsh/zshrc)" != *'eval "$(/usr/local/bin/mise activate zsh)"'* ]]; then
+		echo "Updating /etc/zsh/zshrc"
+		echo 'eval "$(/usr/local/bin/mise activate zsh)"' >>/etc/zsh/zshrc
+	fi
+}
+
+updaterc
 
 echo 'Done!'
