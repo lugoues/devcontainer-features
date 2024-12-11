@@ -1,0 +1,20 @@
+{
+  "id": "pscale",
+  "version": "1.0.1",
+  "name": "planetscale/cli (via Github Releases)",
+  "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/pscale",
+  "description": " The CLI for PlanetScale Database",
+  "options": {
+    "version": {
+      "default": "latest",
+      "description": "Select the version to install.",
+      "proposals": [
+        "latest"
+      ],
+      "type": "string"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers-contrib/features/gh-release"
+  ]
+}

@@ -27,6 +27,7 @@ jobs:
           - luarocks
           - mise
           - neovim
+          - pscale
           - stern
           - tailscale
           - terramate
