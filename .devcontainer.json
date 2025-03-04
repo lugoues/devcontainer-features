@@ -19,7 +19,7 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/lugoues/devcontainer-features/just:1.0.0": {}
+    "ghcr.io/lugoues/devcontainer-features/just:1.0.1": {}
   },
   "remoteUser": "node",
   "updateContentCommand": "npm install -g @devcontainers/cli"

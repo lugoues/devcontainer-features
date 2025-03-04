@@ -90,9 +90,21 @@ case $architecture in
 esac
 
 
+<<<<<<< Updated upstream
 sudo -iu "${USERNAME}" << EOF
     set -eo pipefail
     set -x
+=======
+# shellcheck disable=SC2154
+$nanolayer_location \
+    install \
+    devcontainer-feature \
+    "ghcr.io/devcontainers-extra/features/gh-release:1" \
+        --option repo='kubernetes-sigs/krew' \
+        --option binaryNames='krew' \
+        --option binLocation='$_REMOTE_USER_HOME/.local/bin' \
+        --option version="$VERSION"
+>>>>>>> Stashed changes
 
     export KREW_ROOT="${USER_LOCATION}/.local/share/krew"
 
@@ -105,7 +117,7 @@ sudo -iu "${USERNAME}" << EOF
     "${TMP_DIR}/krew-linux_${architecture}" install krew
 
     if [ -n "${PLUGINS}" ]; then
-        "${TMP_DIR}/krew-linux_${architecture}" install ${PLUGINS}
+        "${TMP_justDIR}/krew-linux_${architecture}" install ${PLUGINS}
     fi
 
 EOF

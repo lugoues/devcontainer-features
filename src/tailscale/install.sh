@@ -58,7 +58,7 @@ download() {
 }
 
 find_version_from_git_tags VERSION https://github.com/tailscale/tailscale
-
+https://pkgs.tailscale.com/stable/tailscale_1.64.0_amd64.tgz
 tailscale_url="https://pkgs.tailscale.com/stable/tailscale_${VERSION}_${architecture}.tgz"
 
 script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"

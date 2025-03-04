@@ -28,7 +28,7 @@ check_packages() {
 
 export DEBIAN_FRONTEND=noninteractive
 
-ensure_nanolayer nanolayer_location "v0.5.4"
+ensure_nanolayer nanolayer_location "v0.5.6"
 
 # Install dependencies
 check_packages apt-transport-https curl ca-certificates gnupg python3 wget
