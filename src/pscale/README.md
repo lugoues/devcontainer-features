@@ -1,13 +1,13 @@
 
-# fly (via Github Releases) (fly)
+# planetscale/cli (via Github Releases) (pscale)
 
-Command line tools for fly.io services.
+ The CLI for PlanetScale Database
 
 ## Example Usage
 
 ```json
 "features": {
-    "ghcr.io/lugoues/devcontainer-features/fly:1": {}
+    "ghcr.io/lugoues/devcontainer-features/pscale:1": {}
 }
 ```
 
@@ -21,4 +21,4 @@ Command line tools for fly.io services.
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/fly/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/lugoues/devcontainer-features/blob/main/src/pscale/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
