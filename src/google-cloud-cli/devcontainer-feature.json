@@ -1,6 +1,6 @@
 {
   "id": "google-cloud-cli",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "name": "Google Cloud CLI (via APT)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/google-cloud-cli",
   "description": "Find and install kubectl plugins .",

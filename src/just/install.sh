@@ -1,12 +1,10 @@
-#!/bin/bash -i
 
 set -e
 
-# shellcheck disable=SC1091
-source ./library_scripts.sh
+. ./library_scripts.sh
 
 # nanolayer is a cli utility which keeps container layers as small as possible
-# source code: https://github.com/devcontainers-contrib/nanolayer
+# source code: https://github.com/devcontainers-extra/nanolayer
 # `ensure_nanolayer` is a bash function that will find any existing nanolayer installations,
 # and if missing - will download a temporary copy that automatically get deleted at the end
 # of the script
@@ -32,7 +30,7 @@ updaterc() {
 $nanolayer_location \
     install \
     devcontainer-feature \
-    "ghcr.io/devcontainers-extra/features/gh-release:1" \
+    "ghcr.io/devcontainers-extra/features/gh-release:1.0.25" \
         --option repo='casey/just'  \
         --option binaryNames='just' \
         --option libName='just'     \

@@ -13,25 +13,26 @@ jobs:
     strategy:
       matrix:
         features:
-          - atuin
-          - delta
-          - fly
-          - google-cloud-cli
-          - hadolint
-          - just
-          - krew
-          - kustomize
-          - lefthook
-          - lnav
-          - lua
-          - luarocks
-          - mise
-          - neovim
-          - pscale
-          - stern
-          - tailscale
-          - terramate
-          - tilt
+        - atuin
+        - delta
+        - fly
+        - google-cloud-cli
+        - hadolint
+        - just
+        - k3d
+        - k9s
+        - krew
+        - lefthook
+        - lnav
+        - lua
+        - luarocks
+        - mise
+        - neovim
+        - pscale
+        - stern
+        - tailscale
+        - terramate
+        - tilt
         baseImage:
           - mcr.microsoft.com/devcontainers/base:bookworm
           - mcr.microsoft.com/devcontainers/base:ubuntu

@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
-set -e
-set -x
+#!/bin/bash
+set -ex
 
-# shellcheck disable=SC1091
-source ./library_scripts.sh
+. ./library_scripts.sh
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'

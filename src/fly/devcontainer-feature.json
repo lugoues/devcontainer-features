@@ -1,8 +1,8 @@
 {
   "id": "fly",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "name": "fly (via Github Releases)",
-  "documentationURL": "http://github.com/devcontainers-contrib/features/tree/main/src/flyctl",
+  "documentationURL": "https://github.com/lugoues/devcontainer-features/tree/main/src/fly",
   "description": "Command line tools for fly.io services.",
   "options": {
     "version": {
@@ -15,6 +15,6 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/devcontainers-contrib/features/gh-release"
+    "ghcr.io/devcontainers-extra/features/gh-release"
   ]
 }
