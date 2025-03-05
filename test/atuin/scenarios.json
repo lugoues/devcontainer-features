@@ -1,0 +1,10 @@
+{
+  "custom_hostname": {
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+      "atuin": {
+        "atuinHostName": "testing-host"
+      }
+    }
+  }
+}

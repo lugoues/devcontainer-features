@@ -20,20 +20,26 @@ $nanolayer_location \
         --option assetRegex='.tar.gz$' \
         --option version="$VERSION"
 
-if [[ "$(cat /etc/bash.bashrc)" != *"$1"* ]]; then
-    echo "Updating /etc/bash.bashrc"
-     #shellcheck disable=SC2016
-    echo 'eval "$(atuin init bash)"' >>/etc/bash.bashrc
 
-    mkdir -p /usr/local/share/bash-preexec
-    curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o /usr/local/share/bash-preexec/.bash-tc.sh
-    printf '\n[[ -f /usr/local/share/bash-preexec/.bash-tc.sh ]] && source /usr/local/share/bash-preexec/.bash-tc.sh\n' >> ~/.bashrc
+RC_FILE="/etc/bash.bashrc"
+INIT_LINE='eval "$(atuin init bash)"'
+if [ -f "$RC_FILE" ] && ! grep -qF "$INIT_LINE" "$RC_FILE"; then
+    echo "$INIT_LINE" >> "$RC_FILE"
+
+    if [ -n "${ATUINHOSTNAME}" ]; then
+        echo "export ATUIN_HOST_NAME='${ATUINHOSTNAME}'" >>  "$RC_FILE"
+    fi
 fi
 
-if [ -f "/etc/zsh/zshrc" ] && [[ "$(cat /etc/zsh/zshrc)" != *"$1"* ]]; then
-    echo "Updating /etc/zsh/zshrc"
-    #shellcheck disable=SC2016
-    echo 'eval "$(atuin init zsh)"' >>/etc/zsh/zshrc
+RC_FILE="/etc/zsh/zshrc"
+INIT_LINE='eval "$(atuin init zsh)"'
+if [ -f "$RC_FILE" ] && ! grep -qF "$INIT_LINE" "$RC_FILE"; then
+    echo "$INIT_LINE" >> "$RC_FILE"
+
+    if [ -n "${ATUINHOSTNAME}" ]; then
+        echo "export ATUIN_HOST_NAME='${ATUINHOSTNAME}'" >>  "$RC_FILE"
+    fi
 fi
+
 
 echo 'Done!'

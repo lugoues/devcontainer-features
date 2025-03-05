@@ -1,6 +1,6 @@
 {
   "id": "atuin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "name": "Atuin (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/atuin",
   "description": "Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands.",
@@ -8,6 +8,11 @@
     "version": {
       "default": "latest",
       "description": "Select the version to install. (defaults to devcontainer name)",
+      "type": "string"
+    },
+    "atuinHostName": {
+      "default": "",
+      "description": "Hostname to assign atuin data.",
       "type": "string"
     }
   },
