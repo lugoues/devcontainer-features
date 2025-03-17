@@ -21,24 +21,24 @@ $nanolayer_location \
         --option version="$VERSION"
 
 
-RC_FILE="/etc/bash.bashrc"
-INIT_LINE='eval "$(atuin init bash)"'
-if [ -f "$RC_FILE" ] && ! grep -qF "$INIT_LINE" "$RC_FILE"; then
-    echo "$INIT_LINE" >> "$RC_FILE"
 
-    if [ -n "${ATUINHOSTNAME}" ]; then
-        echo "export ATUIN_HOST_NAME='${ATUINHOSTNAME}'" >>  "$RC_FILE"
-    fi
+
+RC_FILE="/etc/bash.bashrc"
+echo "CONFIGUREINIT=${CONFIGUREINIT}" >> "$RC_FILE"
+if [ "${CONFIGUREINIT}" = "true" ]; then
+    echo 'eval "$(atuin init bash)"' >> "$RC_FILE"
+fi
+if [ -n "${ATUINHOSTNAME}" ]; then
+    echo "export ATUIN_HOST_NAME='${ATUINHOSTNAME}'" >>  "$RC_FILE"
 fi
 
 RC_FILE="/etc/zsh/zshrc"
-INIT_LINE='eval "$(atuin init zsh)"'
-if [ -f "$RC_FILE" ] && ! grep -qF "$INIT_LINE" "$RC_FILE"; then
-    echo "$INIT_LINE" >> "$RC_FILE"
-
-    if [ -n "${ATUINHOSTNAME}" ]; then
-        echo "export ATUIN_HOST_NAME='${ATUINHOSTNAME}'" >>  "$RC_FILE"
-    fi
+echo "CONFIGUREINIT=${CONFIGUREINIT}" >> "$RC_FILE"
+if [ "${CONFIGUREINIT}" = "true" ]; then
+    echo 'eval "$(atuin init zsh)"' >> "$RC_FILE"
+fi
+if [ -n "${ATUINHOSTNAME}" ]; then
+    echo "export ATUIN_HOST_NAME='${ATUINHOSTNAME}'" >>  "$RC_FILE"
 fi
 
 
