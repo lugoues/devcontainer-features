@@ -17,6 +17,7 @@ Atuin replaces your existing shell history with a SQLite database, and records a
 |-----|-----|-----|-----|
 | version | Select the version to install. (defaults to devcontainer name) | string | latest |
 | atuinHostName | Hostname to assign atuin data. | string | - |
+| configureInit | Set system wide atuin init | boolean | true |
 
 
 
