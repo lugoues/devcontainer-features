@@ -20,3 +20,10 @@ $nanolayer_location \
 
 
 curl -fsSL https://tailscale.com/install.sh | sh
+
+
+if [ ! -e "/usr/local/share/tailscaled-entrypoint.sh" ]; then
+    echo "(*) Setting up entrypoint..."
+    cp -f tailscaled-entrypoint.sh /usr/local/share/
+    chmod +x /usr/local/share/tailscaled-entrypoint.sh
+fi
