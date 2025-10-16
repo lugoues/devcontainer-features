@@ -1,0 +1,12 @@
+{
+  "persitence_single_link": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "persistence": {
+        "paths": "~/.config/tests/nested/deep"
+      }
+    },
+    "containerUser": "vscode",
+    "onCreateCommand": "mkdir -p /mnt/persistence-data"
+  }
+}
