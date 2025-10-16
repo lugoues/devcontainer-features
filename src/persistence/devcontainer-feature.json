@@ -1,0 +1,25 @@
+{
+  "id": "persistence",
+  "version": "1.0.12",
+  "name": "Persistance",
+  "documentationURL": "http://github.com/lugoues/devcontainers-features/tree/main/src/persistence",
+  "description": "Store data you with to persist between cntainer rebuilds.",
+  "options": {
+    "paths": {
+      "default": "",
+      "description": "Colon separated list of directory paths to persist.",
+      "type": "string"
+    }
+  },
+  "mounts": [
+    {
+      "source": "persistence-${devcontainerId}",
+      "target": "/mnt/persistence-data",
+      "type": "volume"
+    }
+  ],
+  "postCreateCommand": "/usr/local/share/persistence_post_create",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
