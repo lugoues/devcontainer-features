@@ -1,6 +1,6 @@
 {
   "id": "mise",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "name": "mise (via Github Releases)",
   "documentationURL": "http://github.com/lugoues/devcontainer-features/tree/main/src/mise",
   "description": "dev tools, env vars, task runner",
@@ -16,5 +16,16 @@
   },
   "installsAfter": [
     "ghcr.io/devcontainers-extra/features/gh-release"
-  ]
+  ],
+  "mounts": [
+    {
+      "source": "mise-data-volume",
+      "target": "/mnt/mise-data",
+      "type": "volume"
+    }
+  ],
+  "containerEnv": {
+    "MISE_DATA_DIR": "/mnt/mise-data"
+  }
 }
+
