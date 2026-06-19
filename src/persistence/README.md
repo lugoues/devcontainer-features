@@ -15,7 +15,8 @@ Store data you with to persist between cntainer rebuilds.
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| paths | Colon separated list of directory paths to persist. | string | - |
+| directories | Colon separated list of directory paths to persist. | string | - |
+| files | Colon separated list of file paths to persist. | string | - |
 
 
 
