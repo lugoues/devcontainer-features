@@ -15,7 +15,7 @@ ensure_nanolayer nanolayer_location "v0.5.6"
 $nanolayer_location \
     install \
     devcontainer-feature \
-    "ghcr.io/devcontainers-extra/features/gh-release:1.0.25" \
+    "ghcr.io/devcontainers-extra/features/gh-release:1.0.26" \
     --option repo="jdx/mise" \
     --option binaryNames="mise" \
     --option version="$VERSION" \
