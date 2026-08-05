@@ -36,6 +36,10 @@ if [ "\$(id -un)" != "root" ]; then
     fi
 fi
 
+# Tracks which paths completed first-time setup, so data the user
+# intentionally emptied is not re-seeded from the image layer on rebuilds.
+\${SUDO_CMD} mkdir -p "${PERSIST_DIR}/.persistence-init"
+
 EOF
 
 chmod +x "${PERSIST_POST_CREATE}"
@@ -86,10 +90,12 @@ create_symlink() {
 
     mkdir -p "${parent_dir}"
 
-    if [[ -L "${original_path}" ]]; then
-        # Re-run over an earlier install: replace the (likely dangling) symlink.
+    if [[ -L "${original_path}" && "$(readlink "${original_path}")" == "${persist_path}" ]]; then
+        # Re-run over an earlier install: replace our own (likely dangling) symlink.
         rm -f "${original_path}"
-    elif [[ -e "${original_path}" ]]; then
+    elif [[ -e "${original_path}" || -L "${original_path}" ]]; then
+        # Regular file/dir, or a foreign symlink (dotfile manager, base image):
+        # preserve it as the backup.
         # Clear any stale backup first; mv into an existing directory would
         # nest instead of replace.
         rm -rf "${original_path}.backup"
@@ -116,13 +122,16 @@ if [[ -n "${DIRECTORIES:-}" ]]; then
         resolve_persist_path "${original_path}"
         persist_path="${PERSIST_PATH}"
 
+        marker_path="${PERSIST_DIR}/.persistence-init/${persist_path##*/}"
+
         append_post_create "echo \"Setting up persistent directory: ${path}\""
         append_post_create "\${SUDO_CMD} mkdir -p \"${persist_path}\""
-        append_post_create "if [ -d \"${original_path}.backup\" ] && [ -z \"\$(ls -A \"${persist_path}\")\" ]; then"
+        append_post_create "if [ ! -e \"${marker_path}\" ] && [ -d \"${original_path}.backup\" ] && [ -z \"\$(ls -A \"${persist_path}\")\" ]; then"
         append_post_create "    echo \"Seeding ${persist_path} from ${original_path}.backup\""
         append_post_create "    \${SUDO_CMD} cp -a \"${original_path}.backup/.\" \"${persist_path}/\""
         append_post_create "fi"
         append_post_create "\${SUDO_CMD} chown -R \"\${TARGET_USER}\" \"${persist_path}\""
+        append_post_create "\${SUDO_CMD} touch \"${marker_path}\""
 
         create_symlink "${original_path}" "${persist_path}"
     done
@@ -140,14 +149,17 @@ if [[ -n "${FILES:-}" ]]; then
 
         persist_parent="$(dirname "${persist_path}")"
 
+        marker_path="${PERSIST_DIR}/.persistence-init/${persist_path##*/}"
+
         append_post_create "echo \"Setting up persistent file: ${path}\""
         append_post_create "\${SUDO_CMD} mkdir -p \"${persist_parent}\""
-        append_post_create "if [ -f \"${original_path}.backup\" ] && [ ! -s \"${persist_path}\" ]; then"
+        append_post_create "if [ ! -e \"${marker_path}\" ] && [ -f \"${original_path}.backup\" ] && [ ! -e \"${persist_path}\" ]; then"
         append_post_create "    echo \"Seeding ${persist_path} from ${original_path}.backup\""
-        append_post_create "    \${SUDO_CMD} cp -a \"${original_path}.backup\" \"${persist_path}\""
+        append_post_create "    \${SUDO_CMD} cp -aL \"${original_path}.backup\" \"${persist_path}\""
         append_post_create "fi"
         append_post_create "\${SUDO_CMD} touch \"${persist_path}\""
         append_post_create "\${SUDO_CMD} chown \"\${TARGET_USER}\" \"${persist_path}\""
+        append_post_create "\${SUDO_CMD} touch \"${marker_path}\""
 
         create_symlink "${original_path}" "${persist_path}"
     done
