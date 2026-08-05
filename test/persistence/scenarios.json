@@ -1,22 +1,29 @@
 {
-  "persitence_single_dir": {
+  "persistence_single_dir": {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
       "persistence": {
         "directories": "~/.config/tests/nested/deep"
       }
     },
-    "containerUser": "vscode",
-    "onCreateCommand": "mkdir -p /mnt/persistence-data"
+    "containerUser": "vscode"
   },
-  "persitence_single_file": {
+  "persistence_single_file": {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
       "persistence": {
         "files": "~/.zshrc"
       }
     },
-    "containerUser": "vscode",
-    "onCreateCommand": "mkdir -p /mnt/persistence-data"
+    "containerUser": "vscode"
+  },
+  "persistence_seed_existing_file": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "persistence": {
+        "files": "~/.bashrc"
+      }
+    },
+    "containerUser": "vscode"
   }
 }
