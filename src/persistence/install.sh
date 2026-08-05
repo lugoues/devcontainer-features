@@ -135,7 +135,27 @@ create_mount_target() {
     local original_path="$1"
     local kind="$2"
 
-    if [[ ! -e "${original_path}" && ! -L "${original_path}" ]]; then
+    if [[ -L "${original_path}" ]]; then
+        # mount --bind follows symlinks, which would leave a deletable symlink
+        # at the configured path — the exact thing bind mode exists to prevent.
+        # Replace it with a real dir/file, dereferencing its content so the
+        # post-start script can still seed the volume from it.
+        local link_target
+        link_target="$(readlink -f "${original_path}" || true)"
+        rm -f "${original_path}"
+        if [[ "${kind}" == "dir" ]]; then
+            mkdir "${original_path}"
+            if [[ -n "${link_target}" && -d "${link_target}" ]]; then
+                cp -a "${link_target}/." "${original_path}/"
+            fi
+        else
+            touch "${original_path}"
+            if [[ -n "${link_target}" && -f "${link_target}" ]]; then
+                cp -aL "${link_target}" "${original_path}"
+            fi
+        fi
+        chown -R "${REMOTE_USER}" "${original_path}"
+    elif [[ ! -e "${original_path}" ]]; then
         create_owned_parents "$(dirname "${original_path}")"
         if [[ "${kind}" == "dir" ]]; then
             mkdir "${original_path}"
