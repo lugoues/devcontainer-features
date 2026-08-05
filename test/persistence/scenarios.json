@@ -34,7 +34,6 @@
         "bindFiles": "~/.bashrc"
       }
     },
-    "containerUser": "vscode",
-    "privileged": true
+    "containerUser": "vscode"
   }
 }

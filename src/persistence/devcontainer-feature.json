@@ -1,6 +1,6 @@
 {
   "id": "persistence",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "name": "Persistence",
   "documentationURL": "https://github.com/lugoues/devcontainer-features/tree/main/src/persistence",
   "description": "Store data you wish to persist between container rebuilds.",
@@ -32,6 +32,12 @@
       "target": "/mnt/persistence-data",
       "type": "volume"
     }
+  ],
+  "capAdd": [
+    "SYS_ADMIN"
+  ],
+  "securityOpt": [
+    "apparmor=unconfined"
   ],
   "onCreateCommand": "/usr/local/share/persistence_post_create",
   "postStartCommand": "/usr/local/share/persistence_post_start",

@@ -20,6 +20,12 @@
   cannot be unlinked, so it survives. Bind mounts need `CAP_SYS_ADMIN` (e.g. a
   privileged container, such as one running docker-in-docker); the post-start
   script fails loudly if the mount cannot be made.
+- To make bind mounts work without per-project configuration, the feature
+  grants itself `CAP_SYS_ADMIN` and `apparmor=unconfined` (Docker's default
+  AppArmor profile denies `mount` even with the capability). Feature metadata
+  is static, so this applies to **every** container using the feature, even
+  symlink-only configurations. If that widening is unacceptable for a project,
+  don't use this feature there, or pin version 1.2.x which predates it.
 - If a configured path already exists in the image, it is moved aside to
   `<path>.backup` and its contents are seeded into the volume on first creation.
   This includes paths that are symlinks (e.g. from a dotfile manager); their
