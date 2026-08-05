@@ -13,6 +13,13 @@
 
 - Each configured path is replaced with a symlink into a per-devcontainer volume
   (`persistence-${devcontainerId}`), so contents survive rebuilds.
+- Paths listed in `bindDirectories`/`bindFiles` are bind-mounted from the volume
+  instead of symlinked, on every container start (`postStartCommand`). Use this
+  for tools that delete and recreate their config path, which would destroy a
+  symlink (the Claude Code extension does this with `~/.claude`). A mountpoint
+  cannot be unlinked, so it survives. Bind mounts need `CAP_SYS_ADMIN` (e.g. a
+  privileged container, such as one running docker-in-docker); the post-start
+  script fails loudly if the mount cannot be made.
 - If a configured path already exists in the image, it is moved aside to
   `<path>.backup` and its contents are seeded into the volume on first creation.
   This includes paths that are symlinks (e.g. from a dotfile manager); their

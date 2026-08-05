@@ -1,18 +1,28 @@
 {
   "id": "persistence",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "name": "Persistence",
   "documentationURL": "https://github.com/lugoues/devcontainer-features/tree/main/src/persistence",
   "description": "Store data you wish to persist between container rebuilds.",
   "options": {
     "directories": {
       "default": "",
-      "description": "Colon separated list of directory paths to persist.",
+      "description": "Colon separated list of directory paths to persist via symlink.",
       "type": "string"
     },
     "files": {
       "default": "",
-      "description": "Colon separated list of file paths to persist.",
+      "description": "Colon separated list of file paths to persist via symlink.",
+      "type": "string"
+    },
+    "bindDirectories": {
+      "default": "",
+      "description": "Colon separated list of directory paths to persist via bind mount, for tools that replace symlinks (e.g. ~/.claude). Requires CAP_SYS_ADMIN.",
+      "type": "string"
+    },
+    "bindFiles": {
+      "default": "",
+      "description": "Colon separated list of file paths to persist via bind mount, for tools that replace symlinks (e.g. ~/.claude.json). Requires CAP_SYS_ADMIN.",
       "type": "string"
     }
   },
@@ -24,6 +34,7 @@
     }
   ],
   "onCreateCommand": "/usr/local/share/persistence_post_create",
+  "postStartCommand": "/usr/local/share/persistence_post_start",
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils"
   ]

@@ -25,5 +25,16 @@
       }
     },
     "containerUser": "vscode"
+  },
+  "persistence_bind": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "persistence": {
+        "bindDirectories": "~/.config/bindtest",
+        "bindFiles": "~/.bashrc"
+      }
+    },
+    "containerUser": "vscode",
+    "privileged": true
   }
 }
